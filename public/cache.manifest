@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# rev 1.2
+/
+/static/images/favicon.ico
+/static/images/icon.png
+http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css
+http://code.jquery.com/jquery-1.6.4.min.js
+http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js
+/static/currency.js
+
+NETWORK:
+*
