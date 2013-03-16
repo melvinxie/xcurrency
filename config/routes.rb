@@ -1,6 +1,6 @@
-Heroku::Application.routes.draw do
-  root to: 'home#index'
-  get "home/index"
+Currency::Application.routes.draw do
+  root to: 'currency#index'
+  get "currency/index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

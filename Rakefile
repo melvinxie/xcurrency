@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Heroku::Application.load_tasks
+Currency::Application.load_tasks

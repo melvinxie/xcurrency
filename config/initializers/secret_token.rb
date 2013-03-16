@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Heroku::Application.config.secret_key_base = 'c7237ade53f27d87a10b6eacb0d447f39cca840a202d645d5fa627ddef617d6fc2cf6c9328e49120f12ed4046be69e1dca2706e376fd18901f198eee0ee43b8a'
+Currency::Application.config.secret_key_base = 'c7237ade53f27d87a10b6eacb0d447f39cca840a202d645d5fa627ddef617d6fc2cf6c9328e49120f12ed4046be69e1dca2706e376fd18901f198eee0ee43b8a'
