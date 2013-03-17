@@ -5,24 +5,17 @@
   </div>
   <div data-role="content">
     <ul id="currencies" data-role="listview">
-      <li id="jpy">
-        <div class="inline">
-          <img src="/img/jpy.png">
-        </div>
-        <label for="jpy">JPY</label>
-        <div class="inline">
-          <input type="number" name="jpy" value="">
-        </div>
-      </li>
-      <li id="jpy">
-        <div class="inline">
-          <img src="/img/jpy.png">
-        </div>
-        <label for="jpy">JPY</label>
-        <div class="inline">
-          <input type="number" name="jpy" value="">
-        </div>
-      </li>
+      <% for currency in @currencies %>
+        <li id="<%= currency %>">
+          <div class="inline">
+            <%= image_tag "/img/#{currency}.png" %>
+          </div>
+          <label for="<%= currency %>"><%= currency.upcase %></label>
+          <div class="inline">
+            <input type="number" name="<%= currency %>" value="">
+          </div>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div data-role="footer">
@@ -32,7 +25,8 @@
 <div data-role="page" id="options">
   <div data-role="header">
     <h1>Select Currencies</h1>
-    <a data-rel="back" data-transition="none" data-corners="false" href="#home" class="ui-btn-right">
+    <a data-rel="back" data-transition="none" data-corners="false" href="#home"
+       class="ui-btn-right">
       Back
     </a>
   </div>
