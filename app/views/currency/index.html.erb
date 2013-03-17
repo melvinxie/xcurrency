@@ -8,7 +8,7 @@
       <% for currency in @currencies %>
         <li id="<%= currency %>">
           <div class="inline">
-            <%= image_tag "/img/#{currency}.png" %>
+            <%= image_tag "#{currency}.png" %>
           </div>
           <label for="<%= currency %>"><%= currency.upcase %></label>
           <div class="inline">
@@ -35,7 +35,7 @@
       <% for currency in @currencies %>
         <label data-corners="false" data-iconpos="right">
           <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
-            <%= image_tag "/img/#{currency}.png" %>
+            <%= image_tag "#{currency}.png" %>
           </div>
           <%= currency.upcase %>
           <input class="inline" type="checkbox" name="jpy_chk"></label>
