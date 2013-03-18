@@ -1,6 +1,7 @@
 Currency::Application.routes.draw do
   root to: 'currency#index'
-  get "currency/index"
+  get 'currency/index'
+  get '/application.manifest' => Rails::Offline
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
