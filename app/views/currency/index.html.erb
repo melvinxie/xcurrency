@@ -38,7 +38,8 @@
             <%= image_tag "#{currency}.png" %>
           </div>
           <%= currency.upcase %>
-          <input class="inline" type="checkbox" name="jpy_chk"></label>
+          <input class="inline" type="checkbox" id="<%= currency %>_chk" name="<%= currency %>">
+        </label>
       <% end %>
     </div>
   </div>

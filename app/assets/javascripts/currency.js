@@ -1,4 +1,4 @@
-var rates;
+var rates = {};
 var base = 1;
 var options = {
   'usd': true,
@@ -29,11 +29,7 @@ function showHome() {
 }
 function showOptions() {
   $.each(options, function(key, value) {
-    if (value) {
-      $('#' + key + '_opt').val('on');
-    } else {
-      $('#' + key + '_opt').val('off');
-    }
+    $('#' + key + '_chk').attr('checked', value).checkboxradio('refresh');
   });
 }
 function supportsHtml5Storage() {
@@ -50,7 +46,7 @@ $(function() {
     }
     if (localStorage.rates) {
       rates = JSON.parse(localStorage.rates);
-      $('input').each(function() {
+      $('#currencies input').each(function() {
         $(this).val(Math.round(base * rates[this.name] * 100) / 100);
       });
     }
@@ -59,47 +55,57 @@ $(function() {
     }
   }
   showHome();
-  $.getJSON('/rates', function(data) {
-    rates = data;
-    $('input').each(function() {
-      $(this).val(Math.round(base * rates[this.name] * 100) / 100);
-    });
-    if (supportsHtml5Storage()) {
-      localStorage.rates = JSON.stringify(rates);
-    }
-  });
-  showOptions();
   $('#home').live('pageshow', function() {
     showHome();
   });
   $('#options').live('pageshow', function() {
     showOptions();
   });
-  $('input').focus(function() {
-    $('input').each(function() {
+  $('#currencies input').focus(function() {
+    $('#currencies input').each(function() {
       $(this).val('');
     });
   });
-  $('input').keyup(function() {
+  $('#currencies input').keyup(function() {
     var from = this.name;
     var amount = parseFloat(this.value);
     if (isFinite(amount)) {
       base = amount / rates[from];
       localStorage.base = base;
     }
-    $('input').each(function() {
+    $('#currencies input').each(function() {
       var to = this.name;
       if (from != to) {
         $(this).val(Math.round(base * rates[to] * 100) / 100);
       }
     });
   });
-  $('select').change(function() {
-    if (this.value == 'on') {
-      options[this.name] = true;
-    } else {
-      options[this.name] = false;
-    }
+  $('#options input').change(function() {
+    options[this.name] = this.checked;
     localStorage.options = JSON.stringify(options);
+  });
+  var jqxhr = $.ajax({
+    url: 'http://query.yahooapis.com/v1/public/yql',
+    dataType: 'jsonp',
+    data: {
+      q: 'select * from yahoo.finance.xchange where pair="USDAUD,USDCAD,USDCHF,USDCNY,USDDKK,USDEUR,USDGBP,USDHKD,USDJPY,USDMXN,USDNZD,USDPHP,USDSEK,USDSGD,USDTHB,USDZAR"',
+      format: 'json',
+      env: 'store://datatables.org/alltableswithkeys'
+    }
+  });
+  jqxhr.success(function(data) {
+    var items = data.query.results.rate;
+    rates['usd'] = 1;
+    for (var i = 0, l = items.length; i < l; i++){
+      item = items[i];
+      keyName = item.Name.substr(item.Name.length - 3).toLowerCase();
+      rates[keyName] = +item.Rate;
+    }
+    $('#currencies input').each(function() {
+      $(this).val(Math.round(base * rates[this.name] * 100) / 100);
+    });
+    if (supportsHtml5Storage()) {
+      localStorage.rates = JSON.stringify(rates);
+    }
   });
 });
