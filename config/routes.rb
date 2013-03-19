@@ -1,7 +1,21 @@
 Currency::Application.routes.draw do
   root to: 'currency#index'
   get 'currency/index'
-  get '/application.manifest' => Rails::Offline
+
+  offline = Rack::Offline.configure do
+    cache '/'
+    cache '/favicon.ico'
+    cache '/apple-touch-icon.png'
+    cache 'http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css'
+    cache 'http://code.jquery.com/jquery-1.8.2.min.js'
+    cache 'http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js'
+    public_path = Rails.public_path
+    Dir[public_path.join('assets/*.{js,css,,png}')].each do |file|
+      cache Pathname.new(file).relative_path_from(public_path)
+    end
+    network '*'
+  end
+  get '/application.manifest' => offline
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
