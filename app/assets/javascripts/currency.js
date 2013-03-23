@@ -2,22 +2,30 @@ var rates = {};
 var base = 1;
 var options = {
   'usd': true,
-  'aud': false,
   'cad': false,
-  'chf': false,
-  'cny': false,
-  'dkk': false,
+  'mxn': false,
+  'brl': false,
+  'cop': false,
   'eur': true,
   'gbp': false,
-  'hkd': false,
-  'jpy': true,
-  'mxn': false,
-  'nzd': false,
-  'php': false,
+  'chf': false,
+  'nok': false,
   'sek': false,
+  'dkk': false,
+  'rub': false,
+  'zar': false,
+  'ils': false,
+  'aed': false,
+  'jpy': true,
+  'cny': false,
+  'hkd': false,
+  'inr': false,
+  'myr': false,
   'sgd': false,
-  'thb': false,
-  'zar': false
+  'krw': false,
+  'twd': false,
+  'aud': false,
+  'nzd': false
 };
 function showHome() {
   $('#currencies li').hide();
@@ -88,7 +96,7 @@ $(function() {
     url: 'http://query.yahooapis.com/v1/public/yql',
     dataType: 'jsonp',
     data: {
-      q: 'select * from yahoo.finance.xchange where pair="USDAUD,USDCAD,USDCHF,USDCNY,USDDKK,USDEUR,USDGBP,USDHKD,USDJPY,USDMXN,USDNZD,USDPHP,USDSEK,USDSGD,USDTHB,USDZAR"',
+      q: 'select * from yahoo.finance.xchange where pair="USDCAD,USDMXN,USDBRL,USDCOP,USDEUR,USDGBP,USDCHF,USDNOK,USDSEK,USDDKK,USDRUB,USDZAR,USDILS,USDAED,USDJPY,USDCNY,USDHKD,USDINR,USDMYR,USDSGD,USDKRW,USDTWD,USDAUD,USDNZD"',
       format: 'json',
       env: 'store://datatables.org/alltableswithkeys'
     }

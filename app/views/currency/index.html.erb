@@ -5,7 +5,7 @@
   </div>
   <div data-role="content">
     <ul id="currencies" data-role="listview">
-      <% for currency in @currencies %>
+      <% for currency in @currencies.values.flatten %>
         <li id="<%= currency %>">
           <div class="inline">
             <%= image_tag "#{currency}.png" %>
@@ -29,16 +29,19 @@
        class="ui-btn-right">Back</a>
   </div>
   <div data-role="content">
-    <div data-role="controlgroup" data-corners="false">
-      <% for currency in @currencies %>
-        <label data-corners="false" data-iconpos="right">
-          <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
-            <%= image_tag "#{currency}.png" %>
-          </div>
-          <%= currency.upcase %>
-          <input class="inline" type="checkbox" id="<%= currency %>_chk" name="<%= currency %>">
-        </label>
-      <% end %>
-    </div>
+    <% for group, list in @currencies %>
+      <div><%= group %></div>
+      <div data-role="controlgroup" data-corners="false">
+        <% for currency in list %>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <%= image_tag "#{currency}.png" %>
+            </div>
+            <%= currency.upcase %>
+            <input class="inline" type="checkbox" id="<%= currency %>_chk" name="<%= currency %>">
+          </label>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
