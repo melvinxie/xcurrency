@@ -18,6 +18,9 @@
   display: inline-block;
   vertical-align: middle;
 }
+.center {
+  text-align: center;
+}
 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
   padding: 0;
 }

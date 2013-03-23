@@ -8,17 +8,17 @@
       <% for currency in @currencies.values.flatten %>
         <li id="<%= currency %>">
           <div class="inline">
-            <%= image_tag "#{currency}.png" %>
+            <%= image_tag "#{currency}.png", :size => "48x48" %>
           </div>
           <label for="<%= currency %>"><%= currency.upcase %></label>
           <div class="inline">
-            <input type="number" name="<%= currency %>" value="">
+            <input type="number" name="<%= currency %>" class="center">
           </div>
         </li>
       <% end %>
     </ul>
   </div>
-  <div style="text-align:center">
+  <div class="center">
     <script type="text/javascript"><!--
       google_ad_client = "ca-pub-3913702637460425";
       /* xcurrency */
@@ -45,7 +45,7 @@
         <% for currency in list %>
           <label data-corners="false" data-iconpos="right">
             <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
-              <%= image_tag "#{currency}.png" %>
+              <%= image_tag "#{currency}.png", :size => "48x48" %>
             </div>
             <%= currency.upcase %>
             <input class="inline" type="checkbox" id="<%= currency %>_chk" name="<%= currency %>">
