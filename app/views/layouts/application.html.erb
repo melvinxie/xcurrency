@@ -7,6 +7,11 @@
   <meta name="description" content="xCurrency is an easy to use currency convertor that looks up multiple currencies at the same time instantly. Save it to your iPhone/Android home screen like an app.">
   <meta name="keywords" content="xcurrency,currency,convertor,app,iphone,andriod">
   <meta name="author" content="Mingmin Xie">
+  <meta property="og:title" content="xCurrency">
+  <meta property="og:description" content="An easy to use currency convertor that looks up multiple currencies at the same time instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.xcurrency.info">
+  <meta property="og:image" content="http://www.xcurrency.info/apple-touch-icon.png">
   <title>xCurrency</title>
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -25,6 +30,14 @@
   </script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <%= yield %>
 
