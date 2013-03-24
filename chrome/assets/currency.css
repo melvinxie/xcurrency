@@ -11,6 +11,10 @@
   padding: 0;
   text-align: center;
 }
+#currencies .ui-li {
+  border-top-width: 0;
+  border-bottom-width: 1px;
+}
 #currencies input {
   width: 150px;
 }
