@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="xCurrency is an easy to use currency convertor that looks up multiple currencies at the same time instantly. Save it to your iPhone/Android home screen like an app.">
+  <meta name="keywords" content="xcurrency,currency,convertor,app,iphone,andriod">
+  <meta name="author" content="Mingmin Xie">
+  <title>xCurrency</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/jquery.mobile-1.3.0.min.css">
+  <link rel="stylesheet" href="assets/currency.css">
+  <script src="assets/jquery-1.8.2.min.js"></script>
+  <script src="assets/jquery.mobile-1.3.0.min.js"></script>
+  <script src="assets/currency.js"></script>
+</head>
+<body style="width:320px;height:480px">
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>xCurrency</h1>
+    <a href="#options" data-corners="false" data-transition="none" class="ui-btn-right">Options</a>
+    <a href="#about" data-corners="false" data-transition="none" class="ui-btn-left">About</a>
+  </div>
+  <div data-role="content" style="height:430px;overflow-y:scroll">
+    <ul id="currencies" data-role="listview">
+        <li id="usd">
+          <div class="inline">
+            <img alt="Usd" height="48" src="assets/usd.png" width="48" />
+          </div>
+          <label for="usd">USD</label>
+          <div class="inline">
+            <input type="number" name="usd" class="center">
+          </div>
+        </li>
+        <li id="cad">
+          <div class="inline">
+            <img alt="Cad" height="48" src="assets/cad.png" width="48" />
+          </div>
+          <label for="cad">CAD</label>
+          <div class="inline">
+            <input type="number" name="cad" class="center">
+          </div>
+        </li>
+        <li id="mxn">
+          <div class="inline">
+            <img alt="Mxn" height="48" src="assets/mxn.png" width="48" />
+          </div>
+          <label for="mxn">MXN</label>
+          <div class="inline">
+            <input type="number" name="mxn" class="center">
+          </div>
+        </li>
+        <li id="brl">
+          <div class="inline">
+            <img alt="Brl" height="48" src="assets/brl.png" width="48" />
+          </div>
+          <label for="brl">BRL</label>
+          <div class="inline">
+            <input type="number" name="brl" class="center">
+          </div>
+        </li>
+        <li id="cop">
+          <div class="inline">
+            <img alt="Cop" height="48" src="assets/cop.png" width="48" />
+          </div>
+          <label for="cop">COP</label>
+          <div class="inline">
+            <input type="number" name="cop" class="center">
+          </div>
+        </li>
+        <li id="eur">
+          <div class="inline">
+            <img alt="Eur" height="48" src="assets/eur.png" width="48" />
+          </div>
+          <label for="eur">EUR</label>
+          <div class="inline">
+            <input type="number" name="eur" class="center">
+          </div>
+        </li>
+        <li id="gbp">
+          <div class="inline">
+            <img alt="Gbp" height="48" src="assets/gbp.png" width="48" />
+          </div>
+          <label for="gbp">GBP</label>
+          <div class="inline">
+            <input type="number" name="gbp" class="center">
+          </div>
+        </li>
+        <li id="chf">
+          <div class="inline">
+            <img alt="Chf" height="48" src="assets/chf.png" width="48" />
+          </div>
+          <label for="chf">CHF</label>
+          <div class="inline">
+            <input type="number" name="chf" class="center">
+          </div>
+        </li>
+        <li id="nok">
+          <div class="inline">
+            <img alt="Nok" height="48" src="assets/nok.png" width="48" />
+          </div>
+          <label for="nok">NOK</label>
+          <div class="inline">
+            <input type="number" name="nok" class="center">
+          </div>
+        </li>
+        <li id="sek">
+          <div class="inline">
+            <img alt="Sek" height="48" src="assets/sek.png" width="48" />
+          </div>
+          <label for="sek">SEK</label>
+          <div class="inline">
+            <input type="number" name="sek" class="center">
+          </div>
+        </li>
+        <li id="dkk">
+          <div class="inline">
+            <img alt="Dkk" height="48" src="assets/dkk.png" width="48" />
+          </div>
+          <label for="dkk">DKK</label>
+          <div class="inline">
+            <input type="number" name="dkk" class="center">
+          </div>
+        </li>
+        <li id="rub">
+          <div class="inline">
+            <img alt="Rub" height="48" src="assets/rub.png" width="48" />
+          </div>
+          <label for="rub">RUB</label>
+          <div class="inline">
+            <input type="number" name="rub" class="center">
+          </div>
+        </li>
+        <li id="zar">
+          <div class="inline">
+            <img alt="Zar" height="48" src="assets/zar.png" width="48" />
+          </div>
+          <label for="zar">ZAR</label>
+          <div class="inline">
+            <input type="number" name="zar" class="center">
+          </div>
+        </li>
+        <li id="ils">
+          <div class="inline">
+            <img alt="Ils" height="48" src="assets/ils.png" width="48" />
+          </div>
+          <label for="ils">ILS</label>
+          <div class="inline">
+            <input type="number" name="ils" class="center">
+          </div>
+        </li>
+        <li id="aed">
+          <div class="inline">
+            <img alt="Aed" height="48" src="assets/aed.png" width="48" />
+          </div>
+          <label for="aed">AED</label>
+          <div class="inline">
+            <input type="number" name="aed" class="center">
+          </div>
+        </li>
+        <li id="jpy">
+          <div class="inline">
+            <img alt="Jpy" height="48" src="assets/jpy.png" width="48" />
+          </div>
+          <label for="jpy">JPY</label>
+          <div class="inline">
+            <input type="number" name="jpy" class="center">
+          </div>
+        </li>
+        <li id="cny">
+          <div class="inline">
+            <img alt="Cny" height="48" src="assets/cny.png" width="48" />
+          </div>
+          <label for="cny">CNY</label>
+          <div class="inline">
+            <input type="number" name="cny" class="center">
+          </div>
+        </li>
+        <li id="hkd">
+          <div class="inline">
+            <img alt="Hkd" height="48" src="assets/hkd.png" width="48" />
+          </div>
+          <label for="hkd">HKD</label>
+          <div class="inline">
+            <input type="number" name="hkd" class="center">
+          </div>
+        </li>
+        <li id="inr">
+          <div class="inline">
+            <img alt="Inr" height="48" src="assets/inr.png" width="48" />
+          </div>
+          <label for="inr">INR</label>
+          <div class="inline">
+            <input type="number" name="inr" class="center">
+          </div>
+        </li>
+        <li id="myr">
+          <div class="inline">
+            <img alt="Myr" height="48" src="assets/myr.png" width="48" />
+          </div>
+          <label for="myr">MYR</label>
+          <div class="inline">
+            <input type="number" name="myr" class="center">
+          </div>
+        </li>
+        <li id="sgd">
+          <div class="inline">
+            <img alt="Sgd" height="48" src="assets/sgd.png" width="48" />
+          </div>
+          <label for="sgd">SGD</label>
+          <div class="inline">
+            <input type="number" name="sgd" class="center">
+          </div>
+        </li>
+        <li id="krw">
+          <div class="inline">
+            <img alt="Krw" height="48" src="assets/krw.png" width="48" />
+          </div>
+          <label for="krw">KRW</label>
+          <div class="inline">
+            <input type="number" name="krw" class="center">
+          </div>
+        </li>
+        <li id="twd">
+          <div class="inline">
+            <img alt="Twd" height="48" src="assets/twd.png" width="48" />
+          </div>
+          <label for="twd">TWD</label>
+          <div class="inline">
+            <input type="number" name="twd" class="center">
+          </div>
+        </li>
+        <li id="aud">
+          <div class="inline">
+            <img alt="Aud" height="48" src="assets/aud.png" width="48" />
+          </div>
+          <label for="aud">AUD</label>
+          <div class="inline">
+            <input type="number" name="aud" class="center">
+          </div>
+        </li>
+        <li id="nzd">
+          <div class="inline">
+            <img alt="Nzd" height="48" src="assets/nzd.png" width="48" />
+          </div>
+          <label for="nzd">NZD</label>
+          <div class="inline">
+            <input type="number" name="nzd" class="center">
+          </div>
+        </li>
+    </ul>
+  </div>
+</div>
+<div data-role="page" id="options">
+  <div data-role="header">
+    <h1>Options</h1>
+    <a data-rel="back" data-corners="false" data-transition="none" href="#home"
+       class="ui-btn-right">Back</a>
+  </div>
+  <div data-role="content" style="height:430px;overflow-y:scroll">
+      <div>Americas</div>
+      <div data-role="controlgroup" data-corners="false">
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Usd" height="48" src="assets/usd.png" width="48" />
+            </div>
+            USD
+            <input class="inline" type="checkbox" id="usd_chk" name="usd">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Cad" height="48" src="assets/cad.png" width="48" />
+            </div>
+            CAD
+            <input class="inline" type="checkbox" id="cad_chk" name="cad">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Mxn" height="48" src="assets/mxn.png" width="48" />
+            </div>
+            MXN
+            <input class="inline" type="checkbox" id="mxn_chk" name="mxn">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Brl" height="48" src="assets/brl.png" width="48" />
+            </div>
+            BRL
+            <input class="inline" type="checkbox" id="brl_chk" name="brl">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Cop" height="48" src="assets/cop.png" width="48" />
+            </div>
+            COP
+            <input class="inline" type="checkbox" id="cop_chk" name="cop">
+          </label>
+      </div>
+      <div>Europe / Middle East / Africa</div>
+      <div data-role="controlgroup" data-corners="false">
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Eur" height="48" src="assets/eur.png" width="48" />
+            </div>
+            EUR
+            <input class="inline" type="checkbox" id="eur_chk" name="eur">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Gbp" height="48" src="assets/gbp.png" width="48" />
+            </div>
+            GBP
+            <input class="inline" type="checkbox" id="gbp_chk" name="gbp">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Chf" height="48" src="assets/chf.png" width="48" />
+            </div>
+            CHF
+            <input class="inline" type="checkbox" id="chf_chk" name="chf">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Nok" height="48" src="assets/nok.png" width="48" />
+            </div>
+            NOK
+            <input class="inline" type="checkbox" id="nok_chk" name="nok">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Sek" height="48" src="assets/sek.png" width="48" />
+            </div>
+            SEK
+            <input class="inline" type="checkbox" id="sek_chk" name="sek">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Dkk" height="48" src="assets/dkk.png" width="48" />
+            </div>
+            DKK
+            <input class="inline" type="checkbox" id="dkk_chk" name="dkk">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Rub" height="48" src="assets/rub.png" width="48" />
+            </div>
+            RUB
+            <input class="inline" type="checkbox" id="rub_chk" name="rub">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Zar" height="48" src="assets/zar.png" width="48" />
+            </div>
+            ZAR
+            <input class="inline" type="checkbox" id="zar_chk" name="zar">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Ils" height="48" src="assets/ils.png" width="48" />
+            </div>
+            ILS
+            <input class="inline" type="checkbox" id="ils_chk" name="ils">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Aed" height="48" src="assets/aed.png" width="48" />
+            </div>
+            AED
+            <input class="inline" type="checkbox" id="aed_chk" name="aed">
+          </label>
+      </div>
+      <div>Asia</div>
+      <div data-role="controlgroup" data-corners="false">
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Jpy" height="48" src="assets/jpy.png" width="48" />
+            </div>
+            JPY
+            <input class="inline" type="checkbox" id="jpy_chk" name="jpy">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Cny" height="48" src="assets/cny.png" width="48" />
+            </div>
+            CNY
+            <input class="inline" type="checkbox" id="cny_chk" name="cny">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Hkd" height="48" src="assets/hkd.png" width="48" />
+            </div>
+            HKD
+            <input class="inline" type="checkbox" id="hkd_chk" name="hkd">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Inr" height="48" src="assets/inr.png" width="48" />
+            </div>
+            INR
+            <input class="inline" type="checkbox" id="inr_chk" name="inr">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Myr" height="48" src="assets/myr.png" width="48" />
+            </div>
+            MYR
+            <input class="inline" type="checkbox" id="myr_chk" name="myr">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Sgd" height="48" src="assets/sgd.png" width="48" />
+            </div>
+            SGD
+            <input class="inline" type="checkbox" id="sgd_chk" name="sgd">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Krw" height="48" src="assets/krw.png" width="48" />
+            </div>
+            KRW
+            <input class="inline" type="checkbox" id="krw_chk" name="krw">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Twd" height="48" src="assets/twd.png" width="48" />
+            </div>
+            TWD
+            <input class="inline" type="checkbox" id="twd_chk" name="twd">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Aud" height="48" src="assets/aud.png" width="48" />
+            </div>
+            AUD
+            <input class="inline" type="checkbox" id="aud_chk" name="aud">
+          </label>
+          <label data-corners="false" data-iconpos="right">
+            <div class="inline" style="height:41px;margin:-9px 20px 0 0;overflow:hidden">
+              <img alt="Nzd" height="48" src="assets/nzd.png" width="48" />
+            </div>
+            NZD
+            <input class="inline" type="checkbox" id="nzd_chk" name="nzd">
+          </label>
+      </div>
+  </div>
+</div>
+<div data-role="page" id="about">
+  <div data-role="header">
+    <h1>About</h1>
+    <a data-rel="back" data-corners="false" data-transition="none" href="#home"
+       class="ui-btn-left">Back</a>
+  </div>
+  <div data-role="content">
+    <p>Data powered by Yahoo!.</p>
+    <p>Visit <a href="http://xcurrency.info">xcurrency.info</a> on your mobile iPhone / Android and save it on home screen like an app.</p>
+    <p>by <a href="http://twitter.com/melvinxie">@melvinxie</a>.</p>
+  </div>
+</div>
+</body>
+</html>

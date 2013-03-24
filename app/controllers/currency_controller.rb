@@ -6,6 +6,5 @@ class CurrencyController < ApplicationController
         ['eur', 'gbp', 'chf', 'nok', 'sek', 'dkk', 'rub', 'zar', 'ils', 'aed']
     @currencies['Asia'] =
         ['jpy', 'cny', 'hkd', 'inr', 'myr', 'sgd', 'krw', 'twd', 'aud', 'nzd']
-    puts @currencies.values.flatten.map{|c| 'USD' + c.upcase}.join(',')
   end
 end
