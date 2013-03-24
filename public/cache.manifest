@@ -1,12 +1,39 @@
 CACHE MANIFEST
-# rev 1.2
 /
-/static/images/favicon.ico
-/static/images/icon.png
-http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css
-http://code.jquery.com/jquery-1.6.4.min.js
-http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js
-/static/currency.js
+/favicon.ico
+/apple-touch-icon.png
+http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css
+http://code.jquery.com/jquery-1.8.2.min.js
+http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js
+assets/application-a5943d8b79315256c36883722520f5cd.js
+assets/application-9bcf8583f0c0aec4245b9dd567c096b6.css
+assets/krw-204f617e6c949b26af0f20b1331fef18.png
+assets/aud-b9af20de0102aaaade79f3055a42a9aa.png
+assets/brl-4b7df6c456cc0d1c5baa1f3be3cafa51.png
+assets/cny-4ba8f4d3ae06cb6d0d5dc68623ecaacb.png
+assets/mxn-30dea7e3413f1635e5f291747f310eda.png
+assets/zar-4b1f0c3f47652414e8529e6065c369ae.png
+assets/inr-350e24dc24c6bd36064364ae7f7d811e.png
+assets/chf-339372ba666f024af336ef3099632d62.png
+assets/thb-e1919a1b7bdd3e5940724a4a1ff6a8ee.png
+assets/cop-67b76b5d9c99bf37d1b425641c36db7c.png
+assets/myr-fb0d58a2c976d9976eb1526195f3b38b.png
+assets/usd-cd9d6c7ec5a011e917e006f1ccb8b305.png
+assets/nok-a70540102ce162c4da2b71244892c543.png
+assets/hkd-c837f7393d61eac518b18c086faac3ee.png
+assets/sgd-b00191879f1e50f55ee7d6bf633b8244.png
+assets/sek-13b4fd726d25d118c2f4d6fe8ae970ad.png
+assets/ils-a7125dec1581ba6c09362b5245bc5a77.png
+assets/jpy-6e870ad9e6f0714bc9ac821b9b0305ba.png
+assets/cad-cfffa8b87866a9dd9cf671c8a10fc79d.png
+assets/rub-05340730039ecd880948609c3e484020.png
+assets/twd-2f64c79e90b8814be45bdef86eeceba0.png
+assets/php-5b920b20b65bbbf3846defb5a290028c.png
+assets/nzd-4914c03549202e9f46c5f45300007580.png
+assets/eur-a098e6c9425673de0b184804f57d19d4.png
+assets/aed-970c9d2af2263a54eb1ea949122fc3f7.png
+assets/gbp-613f7a27da6a6f56abe526db8c8bf991.png
+assets/dkk-ebfb1980508ba82aae8b4393c27a2cf1.png
 
 NETWORK:
 *
