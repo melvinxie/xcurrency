@@ -76,7 +76,7 @@ $(function() {
   });
   $('#currencies input').bind('change keyup input', function() {
     var from = this.name;
-    var amount = parseFloat(this.value.replace(',', ''));
+    var amount = parseFloat(this.value);
     if (isFinite(amount)) {
       base = amount / rates[from];
       localStorage.base = base;
