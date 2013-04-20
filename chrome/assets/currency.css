@@ -28,6 +28,9 @@
 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
   padding: 0;
 }
+.ui-icon {
+  background-image: url(icons-18-white.png);
+}
 #about a {
   text-decoration: none;
 }

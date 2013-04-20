@@ -74,9 +74,9 @@ $(function() {
       $(this).val('');
     });
   });
-  $('#currencies input').keyup(function() {
+  $('#currencies input').bind('change keyup input', function() {
     var from = this.name;
-    var amount = parseFloat(this.value);
+    var amount = parseFloat(this.value.replace(',', ''));
     if (isFinite(amount)) {
       base = amount / rates[from];
       localStorage.base = base;
@@ -93,7 +93,7 @@ $(function() {
     localStorage.options = JSON.stringify(options);
   });
   var jqxhr = $.ajax({
-    url: 'http://query.yahooapis.com/v1/public/yql',
+    url: 'https://query.yahooapis.com/v1/public/yql',
     dataType: 'jsonp',
     data: {
       q: 'select * from yahoo.finance.xchange where pair="USDCAD,USDMXN,USDBRL,USDCOP,USDEUR,USDGBP,USDCHF,USDNOK,USDSEK,USDDKK,USDRUB,USDZAR,USDILS,USDAED,USDJPY,USDCNY,USDHKD,USDINR,USDMYR,USDSGD,USDKRW,USDTWD,USDAUD,USDNZD"',
